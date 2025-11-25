@@ -2,8 +2,10 @@
 
 import React from 'react'
 import Badge from '../components/Badge/Badge'
+import TestimonialQuoteIcon from "@/public/image/svg/testimonial-quote.svg";
 import { Swiper, SwiperSlide } from 'swiper/react'
 import "swiper/css";
+import Image from 'next/image';
 
 const testimonials = [
   {
@@ -68,40 +70,32 @@ const Testimonials = () => {
                 {/* Section Main Title */}
 
                 {/* Testimonial Slider */}
-                <div className="block pl-[calc(50vw-700px)]">
-                    {/* <Swiper
-                        spaceBetween={50}
-                        slidesPerView={3}
-                        onSlideChange={() => console.log('slide change')}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        >
-                        <SwiperSlide>Slide 1</SwiperSlide>
-                        <SwiperSlide>Slide 2</SwiperSlide>
-                        <SwiperSlide>Slide 3</SwiperSlide>
-                        <SwiperSlide>Slide 4</SwiperSlide>
-                    </Swiper> */}
-
+                <div className="block lg:pl-[calc(50vw-496px)] xl:pl-[calc(50vw-593px)] xxl:pl-[calc(50vw-700px)]">
                     <Swiper
                         // modules={[Pagination]}
-                        pagination={{ clickable: true }}
-                        spaceBetween={24}
+                        // pagination={{ clickable: true }}
+                        spaceBetween={8}
                         slidesPerView={1}
                         breakpoints={{
+                            640: { slidesPerView: 1.25 },
                             768: { slidesPerView: 2 },
-                            1024: { slidesPerView: 2.85 },
+                            1024: { slidesPerView: 2.50 },
+                            1440: { slidesPerView: 2.85 },
                         }}
                         className="pb-12"
                     >
                         {testimonials.map((item, i) => (
                             <SwiperSlide key={i}>
-                                <div className="flex flex-col gap-8 bg-darkGunmetal p-6 text-lg leading-tight rounded-2xl h-full shadow-lg relative before:relative before:top-0 before:left-0 before:w-8 before:opacity-10">
-                                    <div className="text-4xl mb-4">“”</div>
+                                <div className="flex flex-col gap-8 bg-darkGunmetal p-10 text-lg leading-tight rounded-2xl">
+                                    <div className="block mb-4">
+                                      <Image src={TestimonialQuoteIcon} alt="Testimonial Quote Icon" />
+                                    </div>
 
                                     <div className="block text-gray400">
                                         <p className="">{item.quote}</p>
                                     </div>
 
-                                    <div className="mt-6 text-white">
+                                    <div className="flex flex-col gap-1 mt-6 text-white">
                                         <p>{item.name}</p>
                                         <p>{item.location}</p>
                                     </div>
