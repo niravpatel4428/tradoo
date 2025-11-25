@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F4F4F6;
+  --foreground: #171717;
+  --primary: #272E3F;
+  --secondary: #E6E8EB;
+  --darblue: #101729;
+  --gray: #8B909C;
+  --lightgreen: #DAEBE9;
+  --darkgreen: #192E3C;
+  --green: #286C66;
+  --greenlight: #5FB98D;
+  --grayprimary: #E6E8EB;
+  --darkgray: #545B6A;
+  --gray400: #B2B6BC;
+  --gray300: #DADCE0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-gray: var(--gray);
+  --color-lightgreen: var(--lightgreen);
+  --color-green: var(--green);
+  --color-darkgreen: var(--darkgreen);
+  --color-greenlight: var(--greenlight);
+  --color-grayprimary: var(--grayprimary);
+  --color-darkgray: var(--darkgray);
+  --color-gray400: var(--gray400);
+  --color-gray300: var(--gray300);
+  /* Updated fonts */
+  /* --font-sans: var(--font-inter); */
+  --font-body: var(--font-inter-display);
+
+  /* Custom breakpoints */
+  --breakpoint-xs: 390px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-xxl: 1440px;
+
+  /* ⭐ Custom Border Radius */
+  --radius-6: 6px;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 15px;
+
+  @media (width >=390px) {
+    max-width: 100%;
+  }
+
+  @media (width >=640px) {
+    max-width: 100%;
+  }
+
+  @media (width >=768px) {
+    max-width: 768px;
+
+  }
+
+  @media (width >=1024px) {
+    max-width: 1024px;
+
+  }
+
+  @media (width >=1280px) {
+    max-width: 1200px;
+  }
+
+  @media (width >=1440px) {
+    max-width: 1420px;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter-display), sans-serif;
+}
+
+.nav-link:hover svg{
+  color: var(--gray);
+}
