@@ -53,13 +53,19 @@
   --breakpoint-xl: 1280px;
   --breakpoint-xxl: 1440px;
 
-  /* ⭐ Custom Border Radius */
+  /*  Custom Border Radius */
   --radius-6: 6px;
+
+  /*  Custom font size */
+   --text-40: 40px;
+   --text-56: 56px;
+   --text-80: 80px;
 }
 
 @utility container {
   margin-inline: auto;
   padding-inline: 15px;
+  max-width: 100%;
 
   @media (width >=390px) {
     max-width: 100%;
