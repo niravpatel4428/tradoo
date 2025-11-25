@@ -12,9 +12,14 @@
   --green: #286C66;
   --greenlight: #5FB98D;
   --grayprimary: #E6E8EB;
+  --darkjunglegreen: #121828;
   --darkgray: #545B6A;
   --gray400: #B2B6BC;
   --gray300: #DADCE0;
+  --gray500: #8B909C;
+  --aurometalsaurus: #6B7280;
+  --romansilver: #8B909C;
+  --darkGunmetal: #1C2233;
 }
 
 @theme inline {
@@ -31,6 +36,11 @@
   --color-darkgray: var(--darkgray);
   --color-gray400: var(--gray400);
   --color-gray300: var(--gray300);
+  --color-gray500: var(--gray500);
+  --color-aurometalsaurus: var(--aurometalsaurus);
+  --color-darkjunglegreen: var(--darkjunglegreen);
+  --color-romansilver: var(--romansilver);
+  --color-darkGunmetal: var(--darkGunmetal);
   /* Updated fonts */
   /* --font-sans: var(--font-inter); */
   --font-body: var(--font-inter-display);
@@ -80,7 +90,7 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--darkgray);
   font-family: var(--font-inter-display), sans-serif;
 }
 
