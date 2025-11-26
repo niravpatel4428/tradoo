@@ -50,9 +50,9 @@ const Testimonials = () => {
     return (
         <>
             {/* Testimonials */}
-            <div className="block pt-[168px] pb-[72px] bg-darkjunglegreen">
+            <div className="block pt-[168px] pb-[72px] max-[390px]:py-16 bg-darkjunglegreen">
                 {/* Section Main Title */}
-                <div className="block max-[390px]:mb-6 mb-24">
+                <div className="block max-[390px]:mb-16 mb-24">
                     <div className="container">
                         <div className="block">
                             <Badge label='Testimonials' variant='darkgreen' className='mb-6' />
@@ -61,7 +61,7 @@ const Testimonials = () => {
                                 <h2>Trusted by Early Supporters, <br className='hidden lg:block'/>Advisors and Pre-Seed Investors.</h2>
                             </div>
                             
-                            <div className="block max-w-[566px] text-lg leading-tight text-gray400">
+                            <div className="block max-w-[566px] text-lg max-[390px]:text-base leading-tight text-gray400">
                                 <p>Real feedback from people who know us personally. Pre-seed investors, advisors and early testers from our network sharing their genuine impressions.</p>
                             </div>
                         </div>
@@ -70,24 +70,22 @@ const Testimonials = () => {
                 {/* Section Main Title */}
 
                 {/* Testimonial Slider */}
-                <div className="block lg:pl-[calc(50vw-496px)] xl:pl-[calc(50vw-593px)] xxl:pl-[calc(50vw-700px)]">
-                    <Swiper
-                        // modules={[Pagination]}
-                        // pagination={{ clickable: true }}
+                <div className="block pl-3 lg:pl-[calc(50vw-496px)] xl:pl-[calc(50vw-593px)] xxl:pl-[calc(50vw-700px)]">
+                    <Swiper className='testimonial-carousel'
                         spaceBetween={8}
-                        slidesPerView={1}
+                        slidesPerView={2.85}
                         breakpoints={{
-                            640: { slidesPerView: 1.25 },
-                            768: { slidesPerView: 2 },
+                            1: { slidesPerView: 1.15 },
+                            390: { slidesPerView: 1.25 },
+                            768: { slidesPerView: 2.25 },
                             1024: { slidesPerView: 2.50 },
                             1440: { slidesPerView: 2.85 },
                         }}
-                        className="pb-12"
                     >
                         {testimonials.map((item, i) => (
                             <SwiperSlide key={i}>
-                                <div className="flex flex-col gap-8 bg-darkGunmetal p-10 text-lg leading-tight rounded-2xl">
-                                    <div className="block mb-4">
+                                <div className="flex flex-col gap-8 max-[390px]:gap-6 bg-darkGunmetal p-10 max-[390px]:p-6 text-lg max-[390px]:text-base leading-tight rounded-2xl">
+                                    <div className="block mb-4 max-[390px]:mb-2">
                                       <Image src={TestimonialQuoteIcon} alt="Testimonial Quote Icon" />
                                     </div>
 
@@ -95,7 +93,7 @@ const Testimonials = () => {
                                         <p className="">{item.quote}</p>
                                     </div>
 
-                                    <div className="flex flex-col gap-1 mt-6 text-white">
+                                    <div className="flex flex-col gap-1 mt-6 max-[390px]:mt-3 text-white">
                                         <p>{item.name}</p>
                                         <p>{item.location}</p>
                                     </div>

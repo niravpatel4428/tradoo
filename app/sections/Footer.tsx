@@ -79,7 +79,7 @@ const Footer = () => {
                 <Image src={FooterGradient} alt="Footer Gradient" className="w-auto h-full object-cover object-center" />
             </div>
             {/* Footer Top */}
-            <div className="block">
+            <div className="block overflow-hidden">
                 <div className="container">
                     <div className="block max-[390px]:py-10 pt-20 pb-14 border-b border-primary">
                         <div className="flex flex-wrap max-[390px]:gap-10 gap-20 -mx-4">
