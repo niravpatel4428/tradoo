@@ -5,6 +5,7 @@ import Badge from "../components/Badge/Badge";
 import Image from "next/image";
 import Button from "../components/Button/Button";
 import dashboard from "@/public/image/dashboard.png";
+import mobiledshboard from "@/public/image/mobiledshboard.png";
 
 const Banner: React.FC = () => {
   const data = [
@@ -31,7 +32,7 @@ const Banner: React.FC = () => {
   ];
 
   return (
-    <div className="py-24">
+    <div className="max-xs:pt-10 pt-24">
       <div>
         <div className="container">
           <div className="text-left md:text-center">
@@ -47,7 +48,7 @@ const Banner: React.FC = () => {
               }
             />
             <div className="w-full max-w-250 mx-auto mt-8">
-              <h1 className="text-5xl xxl:text-80 font-semibold xxl:leading-22 tracking-[-2.40px] text-left md:text-center text-primary">
+              <h1 className="max-xs:tracking-[-1px] max-xs:text-3xl text-5xl xxl:text-80 font-semibold xxl:leading-22 tracking-[-2.40px] text-left md:text-center text-primary">
                 Next Generation of Intelligent Wealth Management.
               </h1>
             </div>
@@ -65,27 +66,68 @@ const Banner: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center">
-        <Image src={dashboard} alt="dashboard" />
+      <div className="max-md:mt-20 flex justify-center relative banner-dashboard-image">
+        <Image src={dashboard} alt="dashboard" className="hidden md:block" />
+        <Image
+          src={mobiledshboard}
+          alt="dashboard"
+          className="block md:hidden"
+        />
+        {/* <div className="absolute left-0 right-0 bottom-[-1px] z-10">
+          <svg
+            className="w-full"
+            width="1920"
+            height="160"
+            viewBox="0 0 1920 160"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="1920"
+              height="160"
+              fill="url(#paint0_linear_133_4127)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_133_4127"
+                x1="960"
+                y1="0"
+                x2="960"
+                y2="160"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#F4F5F7" stop-opacity="0" />
+                <stop offset="1" stop-color="#F4F4F6" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div> */}
       </div>
       <div className="mt-10">
         <div className="container">
-          <div className="grid grid-cols-12 gap-y-14 sm:gap-6">
-            {data.map((item, index) => (
-              <div className="col-span-12 sm:col-span-6 lg:col-span-3" key={index}>
-                <div className="flex flex-col gap-4 items-start">
-                  <h2 className="text-40 xxl:text-5xl font-semibold leading-16 tracking-[-1.68px] text-primary">
-                    {item.percentage}
-                  </h2>
+          <div className="max-xs:pb-10 pb-24 border-b-1 border-solid border-b-grayprimary">
+            <div className="grid grid-cols-12 gap-y-14 sm:gap-6">
+              {data.map((item, index) => (
+                <div
+                  className="col-span-12 sm:col-span-6 lg:col-span-3"
+                  key={index}
+                >
+                  <div className="flex flex-col gap-4 items-start">
+                    <h2 className="text-40 xxl:text-5xl font-semibold leading-16 tracking-[-1.68px] text-primary">
+                      {item.percentage}
+                    </h2>
 
-                  <p className="text-lg leading-[144%] font-normal">{item.title}</p>
+                    <p className="text-lg leading-[144%] font-normal">
+                      {item.title}
+                    </p>
 
-                  <span className="inline-flex py-2 px-3 rounded-6 bg-grayprimary text-base font-medium leading-4.5">
-                    {item.tag}
-                  </span>
+                    <span className="inline-flex py-2 px-3 rounded-6 bg-grayprimary text-base font-medium leading-4.5">
+                      {item.tag}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

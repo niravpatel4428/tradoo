@@ -166,7 +166,7 @@ const Button: React.FC<ButtonProps> = ({
       {trailingIcon && (
         <span
           className={`
-            flex items-center justify-center w-12 h-12 rounded-full
+            flex items-center justify-center min-w-12 w-12 h-12 rounded-full
             transition-all duration-200
             ${iconVariantClasses[variant]}
           `}

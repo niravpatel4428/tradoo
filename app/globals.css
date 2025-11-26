@@ -47,9 +47,9 @@
   --radius-6: 6px;
 
   /*  Custom font size */
-   --text-40: 40px;
-   --text-56: 56px;
-   --text-80: 80px;
+  --text-40: 40px;
+  --text-56: 56px;
+  --text-80: 80px;
 }
 
 @utility container {
@@ -90,6 +90,43 @@ body {
   font-family: var(--font-inter-display), sans-serif;
 }
 
-.nav-link:hover svg{
+.nav-link:hover svg {
   color: var(--gray);
+}
+
+.dashboard-image {
+  position: relative;
+}
+
+.dashboard-image::after {
+  position: absolute;
+  background-image: url('data:image/svg+xml,<svg width="1920" height="160" viewBox="0 0 1920 160" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="1920" height="160" fill="url(%23paint0_linear_133_5142)"/> <defs> <linearGradient id="paint0_linear_133_5142" x1="960" y1="0" x2="960" y2="160" gradientUnits="userSpaceOnUse"> <stop stop-color="white" stop-opacity="0"/> <stop offset="1" stop-color="white"/> </linearGradient> </defs> </svg> ');
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 160px;
+} 
+
+.banner-dashboard-image {
+  position: relative;
+}
+
+.banner-dashboard-image::after {
+  position: absolute;
+  background-image: url('data:image/svg+xml,<svg width="1920" height="160" viewBox="0 0 1920 160" fill="none" xmlns="http://www.w3.org/2000/svg"> <rect width="1920" height="160" fill="url(%23paint0_linear_133_4127)"/> <defs> <linearGradient id="paint0_linear_133_4127" x1="960" y1="0" x2="960" y2="160" gradientUnits="userSpaceOnUse"> <stop stop-color="%23F4F5F7" stop-opacity="0"/> <stop offset="1" stop-color="%23F4F4F6"/> </linearGradient> </defs> </svg> ');
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 160px;
+}
+
+@media(max-width: 767px){
+  .banner-dashboard-image::after,
+  .dashboard-image::after{height: 48px;}
 }
