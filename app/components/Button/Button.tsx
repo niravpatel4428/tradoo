@@ -28,7 +28,7 @@
 //   /** Variant styles */
 //   const variantClasses: Record<ButtonVariant, string> = {
 //     primarydefault: "bg-primary text-white hover:bg-[#101729]",
-//     secondarydefault: "bg-secondary text-primary hover:bg-[#DADCE0]",
+//     secondarydefault: "bg-grayprimary text-primary hover:bg-[#DADCE0]",
 //     contrastdefault: "bg-white text-primary",
 //   };
 
@@ -119,7 +119,7 @@ const Button: React.FC<ButtonProps> = ({
   /** Variant styles */
   const variantClasses: Record<ButtonVariant, string> = {
     primarydefault: "bg-primary text-white hover:bg-[#101729]",
-    secondarydefault: "bg-secondary text-primary hover:bg-[#DADCE0]",
+    secondarydefault: "bg-grayprimary text-primary hover:bg-[#DADCE0]",
     contrastdefault: "bg-white text-primary",
   };
 

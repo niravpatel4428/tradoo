@@ -12,9 +12,14 @@
   --green: #286C66;
   --greenlight: #5FB98D;
   --grayprimary: #E6E8EB;
+  --darkjunglegreen: #121828;
   --darkgray: #545B6A;
   --gray400: #B2B6BC;
   --gray300: #DADCE0;
+  --gray500: #8B909C;
+  --aurometalsaurus: #6B7280;
+  --romansilver: #8B909C;
+  --darkGunmetal: #1C2233;
 }
 
 @theme inline {
@@ -22,6 +27,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-darblue: var(--darblue);
   --color-gray: var(--gray);
   --color-lightgreen: var(--lightgreen);
   --color-green: var(--green);
@@ -31,6 +37,11 @@
   --color-darkgray: var(--darkgray);
   --color-gray400: var(--gray400);
   --color-gray300: var(--gray300);
+  --color-gray500: var(--gray500);
+  --color-aurometalsaurus: var(--aurometalsaurus);
+  --color-darkjunglegreen: var(--darkjunglegreen);
+  --color-romansilver: var(--romansilver);
+  --color-darkGunmetal: var(--darkGunmetal);
   /* Updated fonts */
   /* --font-sans: var(--font-inter); */
   --font-body: var(--font-inter-display);
@@ -90,6 +101,7 @@ body {
   font-family: var(--font-inter-display), sans-serif;
 }
 
+<<<<<<< HEAD
 .nav-link:hover svg {
   color: var(--gray);
 }
@@ -129,4 +141,31 @@ body {
 @media(max-width: 767px){
   .banner-dashboard-image::after,
   .dashboard-image::after{height: 48px;}
+=======
+/* Hide scrollbar for Chrome, Safari and Edge */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+.nav-link:hover svg{
+  color: var(--gray);
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.35s ease forwards;
+>>>>>>> a6dc391bdf17439316798f38b404bf27d274d09c
 }

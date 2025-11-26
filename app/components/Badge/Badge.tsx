@@ -18,7 +18,7 @@ const Badge: React.FC<BadgeProps> = ({
   className = "",
 }) => {
   const baseClasses =
-    "inline-flex items-center gap-2 rounded-6 px-3 py-2 text-base font-medium leading-5";
+    "inline-flex items-center gap-2 rounded-6 px-3 py-2 text-base font-medium leading-tight";
 
   const variantStyles: Record<BadgeVariant, string> = {
     lightgreen: "bg-lightgreen text-green",
