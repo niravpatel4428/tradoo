@@ -101,7 +101,6 @@ body {
   font-family: var(--font-inter-display), sans-serif;
 }
 
-<<<<<<< HEAD
 .nav-link:hover svg {
   color: var(--gray);
 }
@@ -141,7 +140,6 @@ body {
 @media(max-width: 767px){
   .banner-dashboard-image::after,
   .dashboard-image::after{height: 48px;}
-=======
 /* Hide scrollbar for Chrome, Safari and Edge */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
@@ -167,5 +165,5 @@ body {
 
 .animate-slideLeft {
   animation: slideLeft 0.35s ease forwards;
->>>>>>> a6dc391bdf17439316798f38b404bf27d274d09c
+}
 }
