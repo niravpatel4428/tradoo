@@ -27,6 +27,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-darblue: var(--darblue);
   --color-gray: var(--gray);
   --color-lightgreen: var(--lightgreen);
   --color-green: var(--green);

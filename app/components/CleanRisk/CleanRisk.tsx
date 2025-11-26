@@ -85,13 +85,13 @@ const features = [
 ];
 
 const CleanRisk = () => {
-    const scrollRef = useRef(null);
+    const scrollRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         const el = scrollRef.current;
         if (!el) return;
 
-        const onWheel = (e) => {
+        const onWheel = (e: WheelEvent) => {
             if (e.deltaY === 0) return;
             e.preventDefault();
             el.scrollLeft += e.deltaY; // convert vertical → horizontal
