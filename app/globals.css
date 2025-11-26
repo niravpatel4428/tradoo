@@ -103,3 +103,16 @@ body {
 .nav-link:hover svg{
   color: var(--gray);
 }
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.35s ease forwards;
+}
