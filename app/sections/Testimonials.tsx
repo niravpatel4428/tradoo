@@ -50,18 +50,18 @@ const Testimonials = () => {
     return (
         <>
             {/* Testimonials */}
-            <div className="block pt-[168px] pb-[72px] max-[390px]:py-16 bg-darkjunglegreen">
+            <div className="block pt-[168px] pb-[72px] max-xs:py-16 bg-darkjunglegreen">
                 {/* Section Main Title */}
-                <div className="block max-[390px]:mb-16 mb-24">
+                <div className="block max-xs:mb-16 mb-24">
                     <div className="container">
                         <div className="block">
                             <Badge label='Testimonials' variant='darkgreen' className='mb-6' />
                             
-                            <div className="block font-semibold text-white text-[40px] leading-[46px] -tracking-[1.20px] max-[390px]:text-[32px] max-[390px]:leading-[40px] max-[390px]:-tracking-[0.7px] xl:text-[56px] xl:leading-16 xl:-tracking-[1.68px] max-[390px]:mb-6 mb-10">
+                            <div className="block font-semibold text-white text-40 leading-[46px] -tracking-[1.20px] max-xs:text-[32px] max-xs:leading-[40px] max-xs:-tracking-[0.7px] xl:text-56 xl:leading-16 xl:-tracking-[1.68px] max-xs:mb-6 mb-10">
                                 <h2>Trusted by Early Supporters, <br className='hidden lg:block'/>Advisors and Pre-Seed Investors.</h2>
                             </div>
                             
-                            <div className="block max-w-[566px] text-lg max-[390px]:text-base leading-tight text-gray400">
+                            <div className="block max-w-[566px] text-lg max-xs:text-base leading-tight text-gray400">
                                 <p>Real feedback from people who know us personally. Pre-seed investors, advisors and early testers from our network sharing their genuine impressions.</p>
                             </div>
                         </div>
@@ -84,8 +84,8 @@ const Testimonials = () => {
                     >
                         {testimonials.map((item, i) => (
                             <SwiperSlide key={i}>
-                                <div className="flex flex-col gap-8 max-[390px]:gap-6 bg-darkGunmetal p-10 max-[390px]:p-6 text-lg max-[390px]:text-base leading-tight rounded-2xl">
-                                    <div className="block mb-4 max-[390px]:mb-2">
+                                <div className="flex flex-col gap-8 max-xs:gap-6 bg-darkGunmetal p-10 max-xs:p-6 text-lg max-xs:text-base leading-tight rounded-2xl">
+                                    <div className="block mb-4 max-xs:mb-2">
                                       <Image src={TestimonialQuoteIcon} alt="Testimonial Quote Icon" />
                                     </div>
 
@@ -93,7 +93,7 @@ const Testimonials = () => {
                                         <p className="">{item.quote}</p>
                                     </div>
 
-                                    <div className="flex flex-col gap-1 mt-6 max-[390px]:mt-3 text-white">
+                                    <div className="flex flex-col gap-1 mt-6 max-xs:mt-3 text-white">
                                         <p>{item.name}</p>
                                         <p>{item.location}</p>
                                     </div>

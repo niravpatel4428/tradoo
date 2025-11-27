@@ -14,10 +14,10 @@ export default function Home() {
     <>
       <Banner/>
       <CleanRisk/>
+      <WealthManagement/>
       <Framework/>
       <Investment/>
       <Benifits/>
-      <WealthManagement/>
       <Testimonials/>
       <WantPart />
       <Footer />

@@ -104,12 +104,12 @@ const CleanRisk = () => {
     return (
         <>
             {/* Clean Risk */}
-            <div className="block overflow-hidden py-24 max-[390px]:py-16">
-                <div className="flex flex-wrap flex-col gap-16 max-[390px]:gap-10">
+            <div className="block overflow-hidden py-24 max-xs:py-16">
+                <div className="flex flex-wrap flex-col gap-16 max-xs:gap-10">
                     {/* Section Main Title */}
                     <div className="block w-full">
                         <div className="container">
-                            <div className="block w-full font-semibold text-primary text-[40px] leading-[46px] -tracking-[1.20px] max-[390px]:text-[32px] max-[390px]:leading-[40px] max-[390px]:-tracking-[0.7px] xl:text-[56px] xl:leading-16 xl:-tracking-[1.68px]">
+                            <div className="block w-full font-semibold text-primary text-40 leading-[46px] -tracking-[1.20px] max-xs:text-[32px] max-xs:leading-[40px] max-xs:-tracking-[0.7px] xl:text-56 xl:leading-16 xl:-tracking-[1.68px]">
                                 <h2><span className='text-gray'>You choose a clear risk profile</span> — system handles allocation, continuous monitoring, and data-backed adjustments while you keep full control of your assets.</h2>
                             </div>
                         </div>
@@ -119,10 +119,10 @@ const CleanRisk = () => {
                     {/* Features List */}
                     <div className="block w-full overflow-hidden pl-3 lg:pl-[calc(50vw-496px)] xl:pl-[calc(50vw-593px)] xxl:pl-[calc(50vw-700px)]">
                         <div ref={scrollRef} className="block w-full overflow-auto scrollbar-hide scroll-smooth">
-                            <ul className="flex items-center gap-2 whitespace-nowrap text-primary text-lg max-[390px]:text-base leading-tight">
+                            <ul className="flex items-center gap-2 whitespace-nowrap text-primary text-lg max-xs:text-base leading-tight">
                                 {features.map((item, index) => (
                                     <li key={index}>
-                                        <Link href={item.href} className="flex items-center gap-3 bg-white rounded-3xl max-[390px]:rounded-xl py-5 max-[390px]:py-3 px-8 max-[390px]:px-4 transition hover:bg-grayprimary">
+                                        <Link href={item.href} className="flex items-center gap-3 bg-white rounded-3xl max-xs:rounded-xl py-5 max-xs:py-3 px-8 max-xs:px-4 transition hover:bg-grayprimary">
                                             {/* Render only if image exists */}
                                             {item.img && (
                                             <span className="flex items-center justify-center w-8 h-8">
