@@ -73,35 +73,6 @@ const Banner: React.FC = () => {
           alt="dashboard"
           className="block md:hidden"
         />
-        {/* <div className="absolute left-0 right-0 bottom-[-1px] z-10">
-          <svg
-            className="w-full"
-            width="1920"
-            height="160"
-            viewBox="0 0 1920 160"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              width="1920"
-              height="160"
-              fill="url(#paint0_linear_133_4127)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_133_4127"
-                x1="960"
-                y1="0"
-                x2="960"
-                y2="160"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="#F4F5F7" stop-opacity="0" />
-                <stop offset="1" stop-color="#F4F4F6" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div> */}
       </div>
       <div className="mt-10">
         <div className="container">

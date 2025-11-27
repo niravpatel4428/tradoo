@@ -6,36 +6,6 @@ import wave from "@/public/image/wave.png";
 import Image from "next/image";
 import Experience from "../components/Experience/Experience";
 
-
-// import { Canvas, useFrame } from '@react-three/fiber'; 
-
-// function WaveMesh() {
-//   const mesh = useRef();
-
-//   useFrame(({ clock }) => {
-//     const t = clock.getElapsedTime();
-//     const pos = mesh.current.geometry.attributes.position;
-
-//     for (let i = 0; i < pos.count; i++) {
-//       const x = pos.getX(i);
-//       const y = pos.getY(i);
-
-//       const waveX = Math.sin(x * 2 + t * 1.5) * 0.15;
-//       const waveY = Math.cos(y * 3 + t * 1.0) * 0.15;
-
-//       pos.setZ(i, waveX + waveY);
-//     }
-//     pos.needsUpdate = true;
-//   });
-
-//   return (
-//     <mesh ref={mesh} rotation={[-0.4, 0, 0]}>
-//       <planeGeometry args={[10, 4, 200, 200]} />
-//       <meshPhongMaterial color="#121828" shininess={80} />
-//     </mesh>
-//   );
-// }
-
 const WealthManagement = () => {
   const steps = [
     {

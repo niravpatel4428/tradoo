@@ -53,35 +53,6 @@ const Investment: React.FC = () => {
       <div className="max-md:mt-14 flex justify-center relative dashboard-image">
         <Image src={dashboard} alt="dashboard" className="hidden md:block" />
         <Image src={mobiledshboard} alt="dashboard" className="block md:hidden" />
-        {/* <div className="absolute left-0 right-0 bottom-[-1px] z-10">
-          <svg
-            className="w-full"
-            width="1920"
-            height="160"
-            viewBox="0 0 1920 160"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              width="1920"
-              height="160"
-              fill="url(#paint0_linear_133_5142)"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_133_5142"
-                x1="960"
-                y1="0"
-                x2="960"
-                y2="160"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stop-color="white" stop-opacity="0" />
-                <stop offset="1" stop-color="white" />
-              </linearGradient>
-            </defs>
-          </svg>
-        </div> */}
       </div>
       <div className="mt-8">
         <div className="container p-0">
