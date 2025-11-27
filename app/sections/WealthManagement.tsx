@@ -4,7 +4,10 @@ import React, { useRef } from "react";
 import Badge from "../components/Badge/Badge";
 import wave from "@/public/image/wave.png";
 import Image from "next/image";
-// import { Canvas, useFrame } from '@react-three/fiber';
+import Experience from "../components/Experience/Experience";
+
+
+// import { Canvas, useFrame } from '@react-three/fiber'; 
 
 // function WaveMesh() {
 //   const mesh = useRef();
@@ -63,15 +66,15 @@ const WealthManagement = () => {
 
   return (
     <>
-      <div className="block relative pt-83 max-xs:pt-52 ">
+      <div className="block relative -mt-100">
         {/* Wave Animation Code */}
-        <div className="absolute left-0 right-0 top-0 max-xs:h-52 h-[340px]">
-          {/* <Experience /> */}
-          <Image src={wave} alt="wave" className='w-full h-full object-cover' />
+        <div className="relative z-10">
+          <Experience />
+          {/* <Image src={wave} alt="wave" className='w-full h-full object-cover' /> */}
         </div>
         {/* Wave Animation Code */}
 
-        <div className="block pb-2 md:pb-42 max-xs:pb-16 bg-darblue relative z-2">
+        <div className="block pb-2 md:pb-42 max-xs:pb-16 bg-darblue relative z-20 -mt-50">
           <div className="container">
             <div className="block">
               {/* Section Main Title */}

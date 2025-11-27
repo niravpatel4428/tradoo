@@ -75,7 +75,7 @@ const fbRightList = [
 const Footer = () => {
     return (
         <div className="block max-xs:pt-8 pt-[60px] bg-darkjunglegreen relative">
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 h-[452px] overflow-hidden">
+            <div className="absolute w-full max-w-480 mx-auto bottom-full left-1/2 -translate-x-1/2 h-[452px] overflow-hidden">
                 <Image src={FooterGradient} alt="Footer Gradient" className="w-auto h-full object-cover object-center" />
             </div>
             {/* Footer Top */}

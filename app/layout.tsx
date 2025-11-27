@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header/page";
+import { Leva } from "leva";
+import LevaWrapper from "./components/LevaWrapper";
 
 
 
@@ -32,6 +34,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <LevaWrapper />
       </body>
     </html>
   );

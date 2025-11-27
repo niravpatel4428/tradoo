@@ -4,86 +4,24 @@ import logo from "@/public/image/svg/logo-head.svg";
 import risk from "@/public/image/svg/risk.svg";
 import strategy from "@/public/image/svg/strategy.svg";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Button from "../Button/Button";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { MobileBackButton, MobileNavItem, NavListItem } from "../navItems";
 
-// 📌 DESKTOP DROPDOWN FOR "Automated Investing"
-const automatedInvestingDropdown = [
-  {
-    href: "/",
-    title: "Risk Profiles",
-    description: "Choose the profile that matches your risk tolerance",
-    iconSrc: risk,
-  },
-  {
-    href: "/",
-    title: "Strategy Framework",
-    description:
-      "See how Tradoo integrates proven principles behind the scenes",
-    iconSrc: strategy,
-  },
-];
-// 📌 DESKTOP MAIN NAV
-const desktopNav = [
-  { label: "Product", href: "/" },
-  { label: "About", href: "/" },
-  { label: "Approach", href: "/" },
-  {
-    label: "Automated Investing",
-    submenu: true, // <--- flag
-    items: [
-      {
-        href: "/",
-        title: "Risk Profiles",
-        description: "Choose the profile that matches your risk tolerance",
-        iconSrc: risk,
-      },
-      {
-        href: "/",
-        title: "Strategy Framework",
-        description:
-          "See how Tradoo integrates proven principles behind the scenes",
-        iconSrc: strategy,
-      },
-    ],
-  },
-  { label: "Investors", href: "/" },
-];
-
-export const navData = [
-  { label: "Product", href: "/product" },
-  { label: "About", href: "/about" },
-  { label: "Approach", href: "/approach" },
-
-  {
-    label: "Automated Investing",
-    submenu: true,
-    items: [
-      {
-        href: "/",
-        title: "Risk Profiles",
-        description: "Choose the profile that matches your risk tolerance",
-        iconSrc: risk,
-      },
-      {
-        href: "/",
-        title: "Strategy Framework",
-        description:
-          "See how Tradoo integrates proven principles behind the scenes",
-        iconSrc: strategy,
-      },
-    ],
-  },
-
-  { label: "Investors", href: "/investors" },
-];
+import { navData } from "@/app/components/navData";
 
 const Header = () => {
+  type SubmenuItem = {
+    href: string;
+    title: string;
+    description: string;
+    iconSrc: StaticImageData;
+  };
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
-  const [submenuItems, setSubmenuItems] = useState<any[]>([]);
+  const [submenuItems, setSubmenuItems] = useState<SubmenuItem[]>([]);
 
   return (
     <>
@@ -114,7 +52,12 @@ const Header = () => {
                         <ul>
                           {item.items?.map((sub, idx) => (
                             <li key={idx}>
-                              <NavListItem {...sub} />
+                              <NavListItem
+                                href={sub.href}
+                                title={sub.title}
+                                description={sub.description}
+                                iconSrc={sub.iconSrc.src}
+                              />
                             </li>
                           ))}
                         </ul>
@@ -173,7 +116,8 @@ const Header = () => {
 
           {/* Main Menu */}
           {!submenuOpen && (
-            <div>
+            <div className="space-y-3">
+              {/* <MobileBackButton onClick={() => setSubmenuOpen(false)} /> */}
               <ul className="space-y-2">
                 {navData.map((item, i) => (
                   <li key={i}>
@@ -213,17 +157,17 @@ const Header = () => {
               </div>
             </div>
           )}
-
-          {/* SUBMENU */}
           {submenuOpen && (
-            <div className="animate-slideLeft space-y-3">
+            <div className="space-y-3">
               <MobileBackButton onClick={() => setSubmenuOpen(false)} />
-
               <ul className="space-y-3">
                 {submenuItems?.map((sub, i) => (
                   <li key={i}>
                     <NavListItem
-                      {...sub}
+                      href={sub.href}
+                      title={sub.title}
+                      description={sub.description}
+                      iconSrc={sub.iconSrc.src}
                       onClick={() => {
                         setMobileOpen(false);
                         setSubmenuOpen(false);
@@ -242,7 +186,13 @@ const Header = () => {
 
 /* ----------------- SMALL COMPONENTS ------------------ */
 
-const NavItem = ({ label, arrow, linkUrl = "/" }: any) => (
+type NavItemProps = {
+  label: React.ReactNode | string;
+  arrow?: boolean;
+  linkUrl?: string;
+};
+
+const NavItem: React.FC<NavItemProps> = ({ label, arrow, linkUrl = "/" }) => (
   <Link
     href={linkUrl}
     className="cursor-pointer flex items-center gap-2 text-primary text-base font-medium leading-tight hover:text-gray500 py-8.5 -mb-2 group transition"

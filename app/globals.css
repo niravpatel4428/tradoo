@@ -167,3 +167,7 @@ body {
   animation: slideLeft 0.35s ease forwards;
 }
 }
+
+.leva-container {
+  display: none !important;
+}
