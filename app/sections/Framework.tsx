@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Badge from "../components/Badge/Badge";
+import Badge from "../components/Badge";
 import Image from "next/image";
-import Button from "../components/Button/Button";
+import Button from "../components/Button";
 import graph from "@/public/image/svg/graph.svg";
 import chart from "@/public/image/svg/chart.svg";
 import globus from "@/public/image/svg/globus.svg";

@@ -1,13 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "@/public/image/svg/logo-head.svg";
 import risk from "@/public/image/svg/risk.svg";
 import strategy from "@/public/image/svg/strategy.svg";
 import Link from "next/link";
 import Image, { type StaticImageData } from "next/image";
-import Button from "../Button/Button";
+import Button from "./Button";
 import { IoMenu, IoClose } from "react-icons/io5";
-import { MobileBackButton, MobileNavItem, NavListItem } from "../navItems";
+import { MobileBackButton, MobileNavItem, NavListItem } from "./navItems";
 
 import { navData } from "@/app/components/navData";
 
@@ -22,6 +22,15 @@ const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const [submenuItems, setSubmenuItems] = useState<SubmenuItem[]>([]);
+
+  useEffect(() => {
+  if (mobileOpen) {
+    document.documentElement.classList.add("overflow-hidden");
+  } else {
+    document.documentElement.classList.remove("overflow-hidden");
+  }
+}, [mobileOpen]);
+
 
   return (
     <>
@@ -100,7 +109,7 @@ const Header = () => {
 
       {/* MOBILE MENU OVERLAY */}
       {mobileOpen && (
-        <div className="fixed inset-0 bg-background z-50 p-5 animate-slideLeft">
+        <div className="full-menu-block fixed inset-0 bg-background z-50 p-5 animate-slideLeft">
           <div className="flex justify-between items-center mb-8">
             <Image src={logo} alt="logo" className="h-7 w-auto" />
             <button

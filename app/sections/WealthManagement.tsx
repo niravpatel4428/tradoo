@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import Badge from "../components/Badge/Badge";
+import Badge from "../components/Badge";
 import wave from "@/public/image/wave.png";
 import Image from "next/image";
 import Experience from "../components/Experience/Experience";
@@ -67,7 +67,7 @@ const WealthManagement = () => {
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2">
                 {steps.map((item) => (
                   <div key={item.number} className="block">
-                    <div className="flex flex-col gap-14 max-xs:gap-6 bg-darkGunmetal rounded-xl md:rounded-3xl py-10 px-4 max-xs:py-6 md:p-6 xl:p-10 h-full">
+                    <div className="flex flex-col gap-14 max-xs:gap-6 bg-darkGunmetal rounded-xl md:rounded-3xl py-10 px-4 max-xs:py-6 md:p-6 xxl:p-10 h-full">
                       {/* Number */}
                       <div className="block font-semibold text-gray500 text-5xl max-xs:text-3xl leading-tight">
                         <span>{item.number}</span>

@@ -12,8 +12,8 @@ import FooterGradient from "@/public/image/footer-top-gradient.png";
 import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedin } from "react-icons/fa";
 
-import SocialIcons from "@/app/components/SocialIcons/SocialIcons";
-import FooterLink from "../components/FooterLink/FooterLink";
+import SocialIcons from "@/app/components/SocialIcons";
+import FooterLink from "../components/FooterLink";
 
 // Social icons array
 const socialItems = [
@@ -148,7 +148,7 @@ const Footer = () => {
             <div className="block">
                 <div className="container">
                     <div className="flex flex-wrap flex-col gap-8 max-xs:py-10 pt-20 pb-14">
-                        <div className="block text-base leading-[22px] max-xs:text-[14px] max-xs:leading-[20px] text-gray500">
+                        <div className="block text-justify text-base leading-[22px] max-xs:text-[14px] max-xs:leading-[20px] text-gray500">
                             <p>Tradoo is currently offered through a closed private beta under NDA, with access limited to selected users from the <Link href="/" className="underline duration-200 hover:no-underline">waitlist</Link> . Tradoo provides information for general educational purposes only. Nothing on this website is financial, legal, or tax advice, and nothing should be interpreted as an offer or recommendation to buy or sell digital assets. All investment decisions involve risk, including the possible loss of capital. Tradoo does not hold customer assets. All portfolios are executed through user-controlled smart contract vaults. Ownership always remains with the user, and Tradoo cannot access or transfer funds on a user's behalf. On-chain data is sourced from third-party protocols believed to be reliable, but Tradoo cannot guarantee accuracy or completeness. Digital assets may carry regulatory, technological, and market risks. Users should evaluate their personal risk tolerance and, where necessary, consult independent advisors. Past behavior of risk profiles does not predict future results. Illustrations are for informational purposes only. By using this website, you agree to our <Link href="/" className="underline duration-200 hover:no-underline">Terms of Service</Link> and <Link href="/" className="underline duration-200 hover:no-underline">Privacy Policy</Link> Some features may depend on supported wallets, network availability, and jurisdiction. The Tradoo platform is operated by Tradoo Ltd., registered in Switzerland, 6300 Zug.</p>
                         </div>
 

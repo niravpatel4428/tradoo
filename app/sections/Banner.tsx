@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Badge from "../components/Badge/Badge";
+import Badge from "../components/Badge";
 import Image from "next/image";
-import Button from "../components/Button/Button";
+import Button from "../components/Button";
 import dashboard from "@/public/image/dashboard.png";
 import mobiledshboard from "@/public/image/mobiledshboard.png";
 
@@ -71,12 +71,12 @@ const Banner: React.FC = () => {
         <Image
           src={mobiledshboard}
           alt="dashboard"
-          className="block md:hidden"
+          className="block md:hidden" 
         />
       </div>
       <div className="mt-10">
         <div className="container">
-          <div className="max-xs:pb-10 pb-24 border-b-1 border-solid border-b-grayprimary">
+          <div className="max-xs:pb-10 pb-24 border-b-2 border-solid border-b-grayprimary">
             <div className="grid grid-cols-12 gap-y-14 sm:gap-6">
               {data.map((item, index) => (
                 <div

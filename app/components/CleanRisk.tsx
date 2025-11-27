@@ -121,7 +121,7 @@ const CleanRisk: React.FC = () => {
             <div className="container">
               <div className="block w-full font-semibold text-primary text-40 leading-[46px] -tracking-[1.20px] max-xs:text-[32px] max-xs:leading-[40px] max-xs:-tracking-[0.7px] xl:text-56 xl:leading-16 xl:-tracking-[1.68px]">
                 <h2>
-                  <span className="text-gray">You choose a clear risk profile</span> — system handles
+                  <span className="text-gray">You choose a clear risk profile — </span>system handles
                   allocation, continuous monitoring, and data-backed adjustments while you keep full
                   control of your assets.
                 </h2>

@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import Badge from '../components/Badge/Badge'
+import Badge from '../components/Badge'
 import TestimonialQuoteIcon from "@/public/image/svg/testimonial-quote.svg";
 import { Swiper, SwiperSlide } from 'swiper/react'
 import "swiper/css";
@@ -61,7 +61,7 @@ const Testimonials = () => {
                                 <h2>Trusted by Early Supporters, <br className='hidden lg:block'/>Advisors and Pre-Seed Investors.</h2>
                             </div>
                             
-                            <div className="block max-w-[566px] text-lg max-xs:text-base leading-tight text-gray400">
+                            <div className="block max-w-[566px] text-lg max-xs:text-base leading-[144%] text-gray400">
                                 <p>Real feedback from people who know us personally. Pre-seed investors, advisors and early testers from our network sharing their genuine impressions.</p>
                             </div>
                         </div>
@@ -90,7 +90,7 @@ const Testimonials = () => {
                                     </div>
 
                                     <div className="block text-gray400">
-                                        <p className="">{item.quote}</p>
+                                        <p className="leading-[144%]">{item.quote}</p>
                                     </div>
 
                                     <div className="flex flex-col gap-1 mt-6 max-xs:mt-3 text-white">
