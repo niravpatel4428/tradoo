@@ -75,10 +75,10 @@ const WealthManagement = () => {
         {/* Wave Animation Code */}
 
         <div className="block pb-2 md:pb-42 max-xs:pb-16 bg-darblue relative z-20 -mt-50">
-          <div className="container">
+          <div className="container max-sm:p-0">
             <div className="block">
               {/* Section Main Title */}
-              <div className="flex flex-wrap flex-col gap-6 mb-22 max-xs:mb-12 items-start">
+              <div className="max-sm:px-4 flex flex-wrap flex-col gap-6 mb-22 max-xs:mb-12 items-start">
                 <Badge label="How Tradoo Works" variant="darkgreen" />
 
                 <div className="block font-semibold text-white text-40 leading-[46px] -tracking-[1.20px] max-xs:text-[32px] max-xs:leading-[40px] max-xs:-tracking-[0.7px] xl:text-56 xl:leading-16 xl:-tracking-[1.68px] max-xs:mb-6 mb-10">
@@ -86,7 +86,7 @@ const WealthManagement = () => {
                     Helping users invest with structured, risk-based wealth
                     management{" "}
                     <span className="text-gray500">
-                      — transparent and disciplined.
+                      — transparent and disciplined. 
                     </span>
                   </h2>
                 </div>
