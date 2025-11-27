@@ -4,7 +4,6 @@ import React, { useRef } from "react";
 import Badge from "../components/Badge/Badge";
 import wave from "@/public/image/wave.png";
 import Image from "next/image";
-import Experience from "../wave/Experience/Experience";
 // import { Canvas, useFrame } from '@react-three/fiber';
 
 // function WaveMesh() {
