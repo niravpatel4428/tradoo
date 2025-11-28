@@ -32,7 +32,7 @@ const Banner: React.FC = () => {
   ];
 
   return (
-    <div className="max-xs:pt-10 pt-24">
+    <div className="max-xs:pt-10 pt-46">
       <div>
         <div className="container">
           <div className="text-left md:text-center">

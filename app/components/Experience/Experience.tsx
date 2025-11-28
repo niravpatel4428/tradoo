@@ -36,7 +36,7 @@ const Wave = () => {
     uColor1: { value: '#F4F5F7' },
     uColor2: { value: '#F4F5F7' },
     uColor3: { value: '#F4F5F7' },
-    uNoiseDensity: { value: 1.40, min: 0, max: 10, step: 0.001 },
+    uNoiseDensity: { value: 0.75, min: 0, max: 10, step: 0.001 },
     uNoiseStrength: { value: 1, min: 0, max: 10, step: 0.001 },
     waveSize: { value: 22, min: 1, max: 40, step: 0.01 },
     planeRotationX: { value: -Math.PI * 0.45, min: -Math.PI, max: Math.PI, step: 0.01 },

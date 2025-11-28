@@ -10,7 +10,7 @@ import WantPart from "./sections/WantPart";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Banner/>
       <CleanRisk/>
       <WealthManagement/>
@@ -19,6 +19,6 @@ export default function Home() {
       <Benifits/>
       <Testimonials/>
       <WantPart />
-    </>
+    </main>
   );
 }

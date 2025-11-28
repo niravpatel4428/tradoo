@@ -1,8 +1,10 @@
 "use client";
 
-import Image from "next/image";
+import Image from "next/image"; 
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+
 import CleanRiskImg1 from "@/public/image/svg/clean-risk-icon1.svg";
 import CleanRiskImg2 from "@/public/image/svg/clean-risk-icon2.svg";
 import CleanRiskImg3 from "@/public/image/svg/clean-risk-icon3.svg";
@@ -28,136 +30,97 @@ const features = [
   { title: "Smart Contract Vaults", img: CleanRiskImg7, href: "/" },
 ];
 
-
-const CleanRisk: React.FC = () => {
-  const scrollRef = useRef<HTMLDivElement | null>(null); // horizontal scroll wrapper (ul container)
-  const sectionRef = useRef<HTMLDivElement | null>(null); // overall section to pin
-  const tlRef = useRef<any>(null); // store the GSAP timeline/trigger so we can kill on unmount
+export default function CleanRisk() {
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const trackRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    let ctx: any;
-    let ScrollTrigger: any;
-    let gsap: any;
+    const track = trackRef.current;
+    if (!track) return;
 
-    const setup = async () => {
-      // dynamic import to avoid SSR import errors
-      const gsapModule = await import("gsap");
-      const stModule = await import("gsap/ScrollTrigger");
-      gsap = gsapModule.gsap ?? gsapModule.default ?? gsapModule;
-      ScrollTrigger = stModule.ScrollTrigger ?? stModule.default ?? stModule;
-      gsap.registerPlugin(ScrollTrigger);
+    // Duplicate items for seamless infinite loop
+    track.innerHTML += track.innerHTML;
 
-      const container = scrollRef.current;
-      const pinSection = sectionRef.current;
-      if (!container || !pinSection) return;
+    let pos = 0;
+    let speed = 1.2; // moving speed
+    let isDragging = false;
+    let startX = 0;
+    let lastX = 0;
 
-      // ensure ul is selected
-      const list = container.querySelector("ul");
-      if (!list) return;
+    const update = () => {
+      if (!isDragging) pos -= speed; // move left continuously
+      
+      const width = track.scrollWidth / 2;
+      if (pos <= -width) pos = 0; // loop reset invisible
 
-      // set some helpful styles for smooth translation (no layout jumps)
-      gsap.set(list, { willChange: "transform" });
-      gsap.set(container, { willChange: "transform" });
-
-      // create context so all ScrollTriggers are cleaned up on unmount
-      ctx = gsap.context(() => {
-        // Recalculate sizes on refresh/resize
-        const totalScroll = () => container.scrollWidth - container.clientWidth;
-
-        // kill existing timeline if any (hot-reload safety)
-        if (tlRef.current) {
-          try { tlRef.current.kill?.(); } catch (e) {}
-        }
-
-        // animate the <ul> x from 0 to -totalScroll as the page is scrolled vertically
-        tlRef.current = gsap.to(list, {
-          x: () => -totalScroll(),
-          ease: "none",
-          inertia: false,
-          // ScrollTrigger controls it: pin the section and scrub horizontally
-          scrollTrigger: {
-            trigger: pinSection,
-            start: "top top",
-            // end distance should be equal to the scrollable width so the scrub maps 1:1
-            end: () => `+=${container.scrollWidth}`,
-            scrub: 0.7,
-            pin: true,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-            // markers: true, // <-- enable for debugging
-          },
-        });
-      }, pinSection);
+      track.style.transform = `translateX(${pos}px)`;
+      requestAnimationFrame(update);
     };
 
-    setup().catch((err) => {
-      // helpful console error if dynamic import fails
-      // eslint-disable-next-line no-console
-      console.error("GSAP dynamic import failed:", err);
-    });
+    update();
+
+    // Drag events
+    const onDown = (e: any) => {
+      isDragging = true;
+      startX = e.clientX || e.touches?.[0].clientX;
+      lastX = startX;
+    };
+
+    const onMove = (e: any) => {
+      if (!isDragging) return;
+      const x = e.clientX || e.touches?.[0].clientX;
+      const delta = x - lastX;
+      lastX = x;
+      pos += delta; // drag direction
+    };
+
+    const onUp = () => {
+      isDragging = false;
+    };
+
+    track.addEventListener("mousedown", onDown);
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+
+    track.addEventListener("touchstart", onDown);
+    window.addEventListener("touchmove", onMove);
+    window.addEventListener("touchend", onUp);
 
     return () => {
-      // cleanup
-      try {
-        // kill timeline and ScrollTrigger instances created by gsap.context
-        if (tlRef.current) {
-          tlRef.current.kill?.();
-          tlRef.current = null;
-        }
-        // ScrollTrigger cleanup
-        const st = (window as any).ScrollTrigger;
-        if (st && st.getAll) st.getAll().forEach((t: any) => t.kill?.());
-      } catch (e) {
-        // ignore
-      }
+      track.removeEventListener("mousedown", onDown);
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+
+      track.removeEventListener("touchstart", onDown);
+      window.removeEventListener("touchmove", onMove);
+      window.removeEventListener("touchend", onUp);
     };
   }, []);
 
   return (
-    <>
-      <div ref={sectionRef} className="block overflow-hidden py-24 max-xs:py-16 relative z-20">
-        <div className="flex flex-wrap flex-col gap-16 max-xs:gap-10">
-          <div className="block w-full">
-            <div className="container">
-              <div className="block w-full font-semibold text-primary text-40 leading-[46px] -tracking-[1.20px] max-xs:text-[32px] max-xs:leading-[40px] max-xs:-tracking-[0.7px] xl:text-56 xl:leading-16 xl:-tracking-[1.68px]">
-                <h2>
-                  <span className="text-gray">You choose a clear risk profile — </span>system handles
-                  allocation, continuous monitoring, and data-backed adjustments while you keep full
-                  control of your assets.
-                </h2>
-              </div>
-            </div>
-          </div>
+    <div className="py-24 max-xs:py-16 relative z-20">
+      <div className="container mb-12">
+        <h2 className="font-semibold text-primary text-40 max-xs:text-[32px] leading-[46px] xl:text-56 xl:leading-16 tracking-[-1.68px]">
+          <span className="text-gray">You choose a clear risk profile — </span>system handles allocation, continuous monitoring, and data-backed adjustments while you keep full control of your assets.
+        </h2>
+      </div>
 
-          {/* Features List */}
-          <div className="block features-list-block w-full overflow-hidden pl-3 lg:pl-[calc(50vw-496px)] xl:pl-[calc(50vw-593px)] xxl:pl-[calc(50vw-700px)]">
-            {/* IMPORTANT: this wrapper will be pinned by ScrollTrigger */}
-            <div ref={scrollRef} className="block w-full overflow-visible">
-              <ul className="flex items-center gap-2 whitespace-nowrap text-primary text-lg max-xs:text-base leading-tight">
-                {features.map((item, index) => (
-                  <li key={index} className="features-list-item min-w-auto">
-                    <Link
-                      href={item.href}
-                      className="flex items-center gap-3 bg-white rounded-3xl max-xs:rounded-xl py-5 max-xs:py-3 px-8 max-xs:px-4 transition hover:bg-grayprimary"
-                    >
-                      {item.img && (
-                        <span className="flex flex-none items-center justify-center w-8 h-8">
-                          <Image src={item.img} alt={item.title} className="max-w-full max-h-full" />
-                        </span>
-                      )}
-
-                      <span className="font-medium">{item.title}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+      {/* Infinite Ticker */}
+      <div ref={wrapperRef} className="overflow-hidden w-full">
+        <div ref={trackRef} className="ticker-track">
+          {features.map((item, i) => (
+            <div key={i} className="ticker-item">
+              <Link
+                href={item.href}
+                className="pointer-events-none flex items-center gap-3 bg-white rounded-3xl py-5 px-8 hover:bg-grayprimary"
+              >
+                <Image src={item.img} alt={item.title} className="w-8 h-8" />
+                <span className="font-medium text-primary text-lg leading-5">{item.title}</span>
+              </Link>
             </div>
-          </div>
-          {/* Features List */}
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
-};
-
-export default CleanRisk;
+}

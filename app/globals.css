@@ -171,3 +171,14 @@ body {
 .leva-container {
   display: none !important;
 }
+
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  gap: 16px;
+  user-select: none;
+}
+
+.ticker-item {
+  flex-shrink: 0;
+}

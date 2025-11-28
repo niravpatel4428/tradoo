@@ -46,7 +46,7 @@ float cnoise(vec3 P){
   vec4 norm0 = taylorInvSqrt(vec4(dot(g000, g000), dot(g010, g010), dot(g100, g100), dot(g110, g110)));
   g000 *= norm0.x;
   g010 *= norm0.y;
-  g100 *= norm0.z;
+  g100 *= norm0.z; 
   g110 *= norm0.w;
   vec4 norm1 = taylorInvSqrt(vec4(dot(g001, g001), dot(g011, g011), dot(g101, g101), dot(g111, g111)));
   g001 *= norm1.x;
@@ -78,7 +78,7 @@ varying vec3 vPos;
 
 void main(){
 
-  float distortion = cnoise(.43 * position * uNoiseDensity + uTime * .3);
+  float distortion = cnoise(.43 * position * uNoiseDensity + uTime * .15);
   vec3 pos = position + normal * distortion * uNoiseStrength ; 
 
 
@@ -86,4 +86,5 @@ void main(){
   csm_Position = pos;
   // gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0); 
 }
+
 

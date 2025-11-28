@@ -74,7 +74,7 @@ const Framework: React.FC = () => {
                 <div className="grid grid-cols-12 gap-2">
                   {items.map((item, index) => (
                     <div key={index} className="col-span-12 sm:col-span-6">
-                      <div className="bg-white rounded-3xl p-5 xxl:p-8 flex flex-col gap-y-12 xxl:gap-y-13 justify-between h-full">
+                      <div className="bg-white rounded-3xl p-5 xxl:p-8 flex flex-col gap-y-12 xxl:gap-y-13 justify-between h-full hover:bg-gray300 transition-all duration-300">
                         <div className="w-16 h-16 rounded-xl p-3 bg-background flex justify-center items-center">
                           <Image
                             src={item.icon}

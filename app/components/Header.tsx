@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image, { type StaticImageData } from "next/image";
 import Button from "./Button";
 import { IoMenu, IoClose } from "react-icons/io5";
-import { MobileBackButton, MobileNavItem, NavListItem } from "./navItems";
+import { MobileBackButton, MobileNavItem, NavListItem } from "./navItems"; 
 
 import { navData } from "@/app/components/navData";
 
@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <>
       {/* DESKTOP HEADER */}
-      <header className="hidden lg:block">
+      <header className="hidden lg:block fixed left-0 right-0 top-0 z-50 bg-background">
         <div className="container">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -88,7 +88,7 @@ const Header = () => {
       </header>
 
       {/* MOBILE HEADER */}
-      <header className="py-5.5 lg:hidden">
+      <header className="py-5.5 lg:hidden fixed left-0 right-0 top-0 z-50 bg-background">
         <div className="container">
           <div className="flex justify-between items-center">
             {/* Logo */}

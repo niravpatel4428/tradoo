@@ -15,7 +15,7 @@ interface BenefitItem {
 }
 
 interface BenefitBlock {
-  type: "image" | "double";
+  type: "image" | "double"; 
   img?: StaticImageData;
   title?: string;
   desc?: string;
@@ -79,7 +79,7 @@ const Benifits: React.FC = () => {
               <div className="col-span-12 lg:col-span-4" key={index}>
                 {/* IMAGE CARD */}
                 {block.type === "image" && block.img && (
-                  <div className="h-full rounded-3xl bg-white overflow-hidden">
+                  <div className="h-full rounded-3xl bg-white overflow-hidden hover:bg-gray300 transition-all duration-300">
                     <div className="w-full h-117 xxl:h-123.5">
                       <Image
                         src={block.img}
@@ -105,7 +105,7 @@ const Benifits: React.FC = () => {
                     {block.items?.map((item, i) => (
                       <div
                         key={i}
-                        className="flex flex-col justify-between gap-y-12 h-full px-4 py-10 md:p-5 xxl:p-10 rounded-3xl bg-white"
+                        className="hover:bg-gray300 transition-all duration-300 flex flex-col justify-between gap-y-12 h-full px-4 py-10 md:p-5 xxl:p-10 rounded-3xl bg-white"
                       >
                         <div className="rounded-xl w-16 h-16 flex justify-center items-center bg-background p-3">
                           <Image src={item.icon} alt="img" />
